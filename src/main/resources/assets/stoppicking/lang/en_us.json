@@ -2,6 +2,9 @@
   "item.stoppicking.filter": "Item Filter",
   "itemGroup.stoppicking.filter": "Item Picking Filter",
   "tooltip.stoppicking.gui": "§3Stop automatic picking up some items,§rpress [SHIFT] and right click to open GUI.",
-  "tooltip.stoppicking.size": "storage size: %d",
-  "gui.stoppicking.filter.title": "Item Filter"
+  "tooltip.stoppicking.size": "storage size: %d/%d",
+  "gui.stoppicking.filter.title": "Item Filter",
+  "gui.stoppicking.filter.white": "White List",
+  "tooltip.stoppicking.mode": "Mode :",
+  "gui.stoppicking.filter.black": "Black List"
 }

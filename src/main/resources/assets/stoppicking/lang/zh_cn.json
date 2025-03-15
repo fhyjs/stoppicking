@@ -2,6 +2,9 @@
   "item.stoppicking.filter": "物品过滤器",
   "itemGroup.stoppicking.filter": "拾取过滤器",
   "tooltip.stoppicking.gui": "§3阻止自动拾取某些物品,§r按下[SHIFT]与右键打开界面.",
-  "tooltip.stoppicking.size": "物品容量: %d",
-  "gui.stoppicking.filter.title": "物品过滤器"
+  "tooltip.stoppicking.size": "物品容量: %d/%d",
+  "gui.stoppicking.filter.title": "物品过滤器",
+  "gui.stoppicking.filter.white": "白名单",
+  "gui.stoppicking.filter.black": "黑名单",
+  "tooltip.stoppicking.mode": "模式 :"
 }

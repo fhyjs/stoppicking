@@ -23,8 +23,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class FilterConfigMenu extends AbstractContainerMenu {
-    private final Inventory playerInventory;
-    private final ItemStackHandler filterListInv = new ItemStackHandler(){
+    public final Inventory playerInventory;
+    public final ItemStackHandler filterListInv = new ItemStackHandler(){
         @Override
         public int getSlotLimit(int slot) {
             return 1;

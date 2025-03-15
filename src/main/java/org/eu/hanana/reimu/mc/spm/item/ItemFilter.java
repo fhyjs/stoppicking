@@ -37,7 +37,8 @@ public class ItemFilter extends Item implements ICurioItem {
         tooltipComponents.add(Component.translatable("tooltip.stoppicking.gui").withColor(ChatFormatting.GOLD.getColor()));
         var data = stack.get(ComponentRegisterHandler.ITEM_FILTER.get());
         if (data==null) return;
-        tooltipComponents.add(Component.translatable("tooltip.stoppicking.size",data.size).withColor(ChatFormatting.GRAY.getColor()));
+        tooltipComponents.add(Component.translatable("tooltip.stoppicking.size",data.itemNames.size(),data.size).withColor(ChatFormatting.GRAY.getColor()));
+        tooltipComponents.add(Component.translatable("tooltip.stoppicking.mode").append(Component.translatable("gui.stoppicking.filter."+data.mode).withColor(ChatFormatting.BLUE.getColor())));
 
     }
 
