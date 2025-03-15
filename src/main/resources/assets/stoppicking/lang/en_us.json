@@ -1,0 +1,7 @@
+{
+  "item.stoppicking.filter": "Item Filter",
+  "itemGroup.stoppicking.filter": "Item Picking Filter",
+  "tooltip.stoppicking.gui": "§3Stop automatic picking up some items,§rpress [SHIFT] and right click to open GUI.",
+  "tooltip.stoppicking.size": "storage size: %d",
+  "gui.stoppicking.filter.title": "Item Filter"
+}
