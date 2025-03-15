@@ -55,7 +55,7 @@ public class EventHandler {
                     break;
                 }
             }
-            if (!fl){
+            if (!fl&&whited){
                 item.setPickUpDelay(10);
                 event.setCanPickup(TriState.FALSE);
             }
