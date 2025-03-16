@@ -3,6 +3,7 @@ package org.eu.hanana.reimu.mc.spm;
 import org.eu.hanana.reimu.mc.spm.item.ItemRegisterHandler;
 import org.eu.hanana.reimu.mc.spm.item.component.ComponentRegisterHandler;
 import org.eu.hanana.reimu.mc.spm.menu.MenuRegisterHandler;
+import org.eu.hanana.reimu.mc.spm.recipe.RecipeRegisterHandler;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -37,6 +38,7 @@ public class StopPickMod
         ItemRegisterHandler.register(modEventBus);
         ComponentRegisterHandler.register(modEventBus);
         MenuRegisterHandler.register(modEventBus);
+        RecipeRegisterHandler.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

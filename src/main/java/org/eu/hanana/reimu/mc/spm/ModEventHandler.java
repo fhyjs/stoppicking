@@ -13,6 +13,7 @@ import net.neoforged.neoforge.network.handling.IPayloadHandler;
 import net.neoforged.neoforge.network.registration.HandlerThread;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import org.eu.hanana.reimu.mc.spm.curios.CuriosFilterProvider;
+import org.eu.hanana.reimu.mc.spm.datagen.RecipeGenerator;
 import org.eu.hanana.reimu.mc.spm.item.ItemRegisterHandler;
 import org.eu.hanana.reimu.mc.spm.item.component.ComponentRegisterHandler;
 import org.eu.hanana.reimu.mc.spm.item.component.FilterData;
@@ -32,6 +33,14 @@ public class ModEventHandler {
                         StopPickMod.MODID,
                         event.getGenerator().getPackOutput(),
                         event.getExistingFileHelper(),
+                        event.getLookupProvider()
+                )
+        );
+        event.getGenerator().addProvider(
+                // Tell generator to run only when server data are generating
+                event.includeServer(),
+                new RecipeGenerator(
+                        event.getGenerator().getPackOutput(),
                         event.getLookupProvider()
                 )
         );
