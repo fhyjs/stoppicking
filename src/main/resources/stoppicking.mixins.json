@@ -6,7 +6,7 @@
   "client": [
   ],
   "mixins": [
-
+    "MixinEntityMaid"
   ],
   "injectors": {
     "defaultRequire": 1

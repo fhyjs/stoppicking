@@ -26,6 +26,22 @@ repositories {
             url = uri("https://maven.theillusivec4.top/")
         }
     }
+    maven {
+        // location of the maven that hosts JEI files since January 2023
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/"
+    }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
+    maven {
+        url "https://cursemaven.com"
+    }
+    repositories {
+        maven { url 'https://maven.blamejared.com' }
+    }
     mavenLocal()
 }
 
@@ -71,7 +87,6 @@ runs {
 
     server {
         systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
-        argument '--nogui'
     }
 
     // This run config launches GameTestServer and runs all registered gametests, then exits.
@@ -128,6 +143,12 @@ dependencies {
     // Example project dependency using a sister or child project:
     // implementation project(":myproject")
     implementation "top.theillusivec4.curios:curios-neoforge:${curios_version}"
+    compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
+    // at runtime, use the full JEI jar for NeoForge
+    runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    implementation "curse.maven:touhou-little-maid-355044:6302619"
+    compileOnly "vazkii.patchouli:Patchouli:${patchouli_version}:api"
+    runtimeOnly "vazkii.patchouli:Patchouli:${patchouli_version}"
     //compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}:api"
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html

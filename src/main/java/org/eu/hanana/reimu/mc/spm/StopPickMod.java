@@ -1,5 +1,6 @@
 package org.eu.hanana.reimu.mc.spm;
 
+import org.eu.hanana.reimu.mc.spm.compat.CompatManager;
 import org.eu.hanana.reimu.mc.spm.item.ItemRegisterHandler;
 import org.eu.hanana.reimu.mc.spm.item.component.ComponentRegisterHandler;
 import org.eu.hanana.reimu.mc.spm.menu.MenuRegisterHandler;
@@ -21,8 +22,8 @@ public class StopPickMod
     // Define mod id in a common place for everything to reference
     public static final String MODID = "stoppicking";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
-
+    public static final Logger LOGGER = LogUtils.getLogger();
+    public static final CompatManager COMPAT_MANAGER = new CompatManager();
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public StopPickMod(IEventBus modEventBus, ModContainer modContainer)
@@ -39,11 +40,12 @@ public class StopPickMod
         ComponentRegisterHandler.register(modEventBus);
         MenuRegisterHandler.register(modEventBus);
         RecipeRegisterHandler.register(modEventBus);
+        COMPAT_MANAGER.register(modEventBus,modContainer);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        COMPAT_MANAGER.event(event);
     }
 
 }
